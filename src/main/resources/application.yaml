@@ -1,0 +1,85 @@
+#server:
+#  port:
+#    8072
+#
+#keycloak:
+#  realm: projectshakti
+#  auth-server-url: http://localhost:8080
+#  ssl-required: external
+#  resource: logistic-service
+#  bearer-only: true
+#  credentials:
+#    secret: jIn30QlEgPLaIMUj2Kt4vFcMZqffDXks
+#  securityConstraints:
+#    - authRoles:
+#        - CUSTOMER
+#        - INFLUENCER_ADMIN
+#        - SELLER_TEAM
+#        - SELLER_ADMIN
+#        - PROFILE_ADMIN
+#        - LOGISTIC_ADMIN
+#      securityCollections:
+#        - name: Logistics Resource
+#          patterns:
+#            - /v1/logistics/*
+#            - /v1/logistics/sellerServiceability/*
+#            - /v1/logistics/ic_serviceability/*
+#  policy-enforcer-config:
+#    enforcement-mode: ENFORCING
+#    paths:
+#      - path: /v1/logistics/*
+#        methods:
+#          - method: GET
+#            scopes:
+#              - view
+#          - method: POST
+#            scopes:
+#              - create
+#          - method: PUT
+#            scopes:
+#              - update
+#          - method: DELETE
+#            scopes:
+#              - delete
+#          - method: PATCH
+#            scopes:
+#              - edit
+#      - path: /v1/logistics/sellerServiceability/*
+#        methods:
+#          - method: GET
+#            scopes:
+#              - view
+#          - method: POST
+#            scopes:
+#               - create
+#          - method: PUT
+#            scopes:
+#              - update
+#          - method: DELETE
+#            scopes:
+#              - delete
+#          - method: PATCH
+#            scopes:
+#              - edit
+#      - path: /v1/logistics/ic_serviceability/*
+#        methods:
+#          - method: GET
+#            scopes:
+#              - view
+#          - method: POST
+#            scopes:
+#              - create
+#          - method: PUT
+#            scopes:
+#              - update
+#          - method: DELETE
+#            scopes:
+#              - delete
+#          - method: PATCH
+#            scopes:
+#              - edit
+#
+#logging:
+#  level:
+#    org:
+#      keycloak: DEBUG

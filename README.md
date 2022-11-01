@@ -1,0 +1,1 @@
+# keycloak-fine-grained-authz
